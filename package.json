@@ -1,0 +1,30 @@
+{
+  "name": "product_store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon backend/server.js"
+  },
+  "types": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JasaniZeel4827/Product_Store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/JasaniZeel4827/Product_Store/issues"
+  },
+  "homepage": "https://github.com/JasaniZeel4827/Product_Store#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
