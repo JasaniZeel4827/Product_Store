@@ -1,27 +1,21 @@
 {
-  "name": "product_store",
+  "name": "brainware-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon backend/server.js"
   },
-  "types": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JasaniZeel4827/Product_Store.git"
-  },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/JasaniZeel4827/Product_Store/issues"
-  },
-  "homepage": "https://github.com/JasaniZeel4827/Product_Store#readme",
   "dependencies": {
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "mongoose": "^8.13.2"
+    "mongoose": "^8.13.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
