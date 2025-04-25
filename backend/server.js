@@ -59,6 +59,11 @@ app.post("/products", async (req, res) => {
 
 
 
+app.delete("/products/:id", async (req, res) => {
+    const {id} = req.params
+    console.log("id:", id)
+})
+
 
 
 
