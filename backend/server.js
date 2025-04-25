@@ -10,24 +10,62 @@ dotenv.config();
 const app = express();
 
 
-app.get("/api/products", async (req,res) => {
-    // res.send("server is ready in 1.. 2.. 3.. let's gooo")
+app.use(express.json());
+
+
+// app.get("/products", async (req,res) => {
+//     // res.send("server is ready in 1.. 2.. 3.. let's gooo")
+//     const product = req.body;
+
+//     if(!product.name || !product.price || !product.image){
+//         return res.status(400).json({success:false, message: "Please provide all filels" })
+//     } 
+
+//     const newProduct = new Product(product)
+
+//     try{
+//         await newProduct.save();
+//         res.status(201).json({ success: true, data: newProduct})
+//     }catch (error) {
+//         console.log("error in create product:", error.message);
+//         res.status(500).json({ success: false, message: "server error"})
+        
+//     }
+// });
+
+
+
+
+
+
+
+app.post("/products", async (req, res) => {
     const product = req.body;
 
-    if(!product.name || !product.price || !product.image){
-        return res.status(400).json({success:false, message: "Please provide all filels "})
-    } 
+    if (!product.name || !product.price || !product.image) {
+        return res.status(400).json({ success: false, message: "Missing product details" });
+    }
 
-    const newProduct = new Product(product)
+    const newProduct = new Product(product);
 
-    try{
+    try {
         await newProduct.save();
-        res.status(201).json({success: true, data: newProduct})
-    }catch (error) {
-        console.log("error in create product:", error.message);
-        
+        res.status(201).json({ success: true, data: newProduct });
+    } catch (error) {
+        console.log("Error in creating product:", error.message);
+        res.status(500).json({ success: false, message: "Server error" });
     }
 });
+
+
+
+
+
+
+
+
+
+
 
 
 // console.log(process.env.MONGO_URI)
