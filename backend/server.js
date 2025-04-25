@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 
-app.get("/products", async (req,res) => {
+app.get("/api/products", async (req,res) => {
     // res.send("server is ready in 1.. 2.. 3.. let's gooo")
     const product = req.body;
 
