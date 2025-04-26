@@ -13,6 +13,54 @@ const app = express();
 app.use(express.json());
 
 
+
+
+
+
+
+app.get("/product", async (req, res) => {
+    try {
+        const product = await Product.find({});
+        res.status(200).json({ success: true, data: product });
+    } catch (error) {
+        console.log("error in deleting product:", error.message);
+        res.status(404).json({ success: true, message: "product deleted" });
+    }
+});
+
+
+
+
+
+
+
+
+
+app.put("/product:id", async (req, res) => {
+    const { id } = req.params;
+
+    const product = req.body;
+
+    try {
+        await Product.findByIdAndDelete(id, product,{new:true});
+    } catch (error) {
+
+    }
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
 // app.get("/products", async (req,res) => {
 //     // res.send("server is ready in 1.. 2.. 3.. let's gooo")
 //     const product = req.body;
@@ -66,9 +114,11 @@ app.delete("/products/:id", async (req, res) => {
 
 
     try {
-        await Product.findByIdAndDelete(id);
+        const updatedProduct = await Product.findByIdAndDelete(id);
         res.status(200).json({ success: true, message: "Product deleted"})
-    } catch (error) {}
+    } catch (error) {
+        res.status()
+    }
 });
 
 
