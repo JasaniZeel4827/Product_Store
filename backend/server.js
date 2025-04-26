@@ -59,12 +59,17 @@ app.post("/products", async (req, res) => {
 
 
 
+
 app.delete("/products/:id", async (req, res) => {
-    const {id} = req.params
-    console.log("id:", id)
-})
+    const { id } = req.params;
+    // console.log("id:", id);
 
 
+    try {
+        await Product.findByIdAndDelete(id);
+        res.status(200).json({ success: true, message: "Product deleted"})
+    } catch (error) {}
+});
 
 
 
