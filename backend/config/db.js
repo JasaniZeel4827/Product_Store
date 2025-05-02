@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+    import mongoose from "mongoose";
 
 export const connectDB = async () => {
     try {
@@ -10,3 +10,8 @@ export const connectDB = async () => {
     }
 }
 
+function(){
+    return function(){
+        return "hello world"
+    }
+}
